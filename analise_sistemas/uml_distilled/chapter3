@@ -1,0 +1,15 @@
+Class Diagrams Essentials
+
+	A class diagram describes the types of objects in the system and the various kinds of static relationships that exist among them.
+	They also show properties, constraints, and operations of a class and their connections.
+	Features = Operations + Properties
+
+Properties
+	Structural features of the class
+	Attributes and associations
+
+	Attributes
+		visibility name: type multiplicity = default {property-string}
+			only `name` is necessary
+	
+	Associations

@@ -1,0 +1,22 @@
+What is UML?
+		Graphical notation family
+		backed by a meta-model
+		helps describe and design software systems (mainly ones built using OO)
+
+Ways of using UML
+		1. Sketch
+				- Communicate ideas and alternatives
+				- Only important issues, not code details
+
+		2. Blueprint
+				Forward enginerring and reverse engineering
+				Should be done using CASE
+				Detailed
+		3. Programming language
+
+MDA
+		Standard approach to using UML as a programming language
+		PIM and PSM
+
+Essence of UML are meta-models, not diagrams
+

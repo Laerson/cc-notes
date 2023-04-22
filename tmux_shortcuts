@@ -1,0 +1,11 @@
+prefix-key: C-b
+
+split left-right: %
+split top-bottom: "
+move between panels: arrows
+close panels: exit | C-d
+
+create new window: c
+move next window: n
+move previous windows: p
+move to N window: <number>
