@@ -13,3 +13,8 @@ Properties
 			only `name` is necessary
 	
 	Associations
+		line between two classes
+		interchangable with attribute notation
+	it is best to use attributes for small things and associations for more significant classes
+
+	Multiplicity
