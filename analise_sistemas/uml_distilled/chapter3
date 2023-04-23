@@ -14,9 +14,54 @@ Properties
 	
 	Associations
 		line between two classes
+		Solid arrow from source to target (Class A has property B, A is source, and B is target)
 		interchangable with attribute notation
 	it is best to use attributes for small things and associations for more significant classes
 
 	Multiplicity
 		How many objects fill the property
 			e.g. 1, 0..1, *
+
+Bidirectional Associations
+	Properties that are linked as inverses
+		e.g. Person owns Car, Car is owned by Person
+		double headed arrow
+	In programs, you need to keep both synchronized
+
+Operations
+	Actions that a class "know"
+	Correspond to the methods
+	Normally the operations that manipulate properties are ommited
+	Syntax:
+		visibility name (parameter-list) : return-type {property-string}
+	Parameter Syntax:
+		direction name: type = default value
+	With conceptual models, the operations shouldn't specify an interface, but responsibilities.
+	Modifiers vs Queries
+	
+
+Generalization
+	Inheritance
+	One element is a more general version of another
+	Indicated by a solid arrow, with triangle shaped point, from the more specific element to the more general one
+
+Dependency
+	A relationship between two elements
+	It depicts that changes in supplier, may cause changes to the client
+	dashed arrow from client to supplier
+	`A is dependent of ------> B`
+	Dependency isn't transitive
+	List of keywords one can add to the dependency:
+		call
+		create
+		derive
+		instantiate
+		realize
+		etc...
+
+	Trying to show all the dependencies in a class diagram  is an exercise in futility
+
+Constraints:
+	You can use OCL, Natural language, or anything
+	need to be inside braces {}
+	precondition | poscondition | invariant
