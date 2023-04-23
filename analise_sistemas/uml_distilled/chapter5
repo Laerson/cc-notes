@@ -1,0 +1,16 @@
+Keywords
+	Indicates that some element is similar, but different
+	e.g. Interfaces
+	Stereotypes aren't keywords
+	Stereotypes are part of profiles
+
+Responsibilities
+	Can be shown using comment strings
+	--description here
+
+Static properties
+	properties that applies to the class, instead of object
+	indicated by an underline
+
+Aggregation and Composition
+	
