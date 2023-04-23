@@ -18,3 +18,5 @@ Properties
 	it is best to use attributes for small things and associations for more significant classes
 
 	Multiplicity
+		How many objects fill the property
+			e.g. 1, 0..1, *
