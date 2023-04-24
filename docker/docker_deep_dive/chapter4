@@ -1,0 +1,37 @@
+Getting images onto Docker host is called "pulling"
+docker pull `imagename`
+e.g. `docker pull ubuntu:latest`
+
+To launch a container, use `docker run`
+e.g. `docker run -it ubuntu:latest /bin/bash
+the `-it` flag tells Docker to make the container interactive, and to attach the current shell to the container
+The image argument tells which image the container should be based of
+the `/bin/bash` is the process we want to run inside the container
+
+Ctrl-pq to leave the container without killing it
+
+`docker ps` shows the running containers
+
+To attach the shell to a running container:
+	docker container exec
+	e.g.:
+		docker container exec -it <container name or ID> <app>
+		<app> can be bash, for example
+
+To stop and kill a container:
+	docker stop <container>
+	docker rm <container>
+
+
+# 
+From a repository with a Dockerfile, we can build the image with:
+`docker image build`
+
+eg:
+`docker image build -t test:latest` .
+
+`docker image ls`
+shows all the images in the host
+
+to run the image:
+`docker container run -d --name <name of the container> --publish <port:port> <image>

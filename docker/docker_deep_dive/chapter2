@@ -1,0 +1,16 @@
+Three layers of Docker tech:
+	1. Runtime
+	2. The daemon
+	3. Orchestrator
+
+Runtime:
+	lower level
+	starts and stop containers
+	made of two levels: runc, and containerd
+	runc is low level, one for each instance
+	containerd is highlevel, manages the entrire lifecycle of a container. One for each docker installation.
+
+Daemon:
+	Above runtime level
+	Performs higher level tasks (expose the docker remotes API, manage images, managing volumes, networks, etc)
+	Provides an easy to use interface to the lower level abstraction
