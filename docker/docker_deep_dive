@@ -1,0 +1,14 @@
+Motivation:
+	Old days: one application per server
+		Business had to buy a new server for new applications
+		They couldn't test performance requirements, so they ended up buying overpowered servers = waste of money
+
+	VMware:
+		Now Business could run multiple apps securely in one server
+		However, each VM requires an OS (that consumes computer resources)
+		VMs are slow to boot
+		Not so portable
+	
+	Containers:
+		Analogous to a VM, but don't require a full OS
+
