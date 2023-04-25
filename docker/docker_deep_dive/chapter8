@@ -1,0 +1,50 @@
+Containerizing an app
+
+proccess:
+	1. Start with app code and dependencies
+	2. Create a Dockerfile
+	3. feed the Dockerfile into the docker build command
+	4. Push the new image to a registry (optional)
+	5. Run container from the image
+
+Dockerfile commands:
+
+# syntax=docker/dockerfile:1
+	specify the syntax used in the dockerfile
+FROM <image>
+	Pulls the base image
+LABEL mantainer="<author name>"
+	Adds metadata to the image. In this case the author
+WORKDIR <path>
+	sets the working directory of the future commands
+ENV VARIABLE=value
+	creates environment variables
+RUN <command>
+	execute commands (like you were on terminal)
+COPY hostpath targetpath
+	cp command, from the host filesystem to the container
+EXPOSE <port>
+	tells the container to listen to <port>
+ENTRYPOINT ["str1", "str2", etc]
+	arguments to ALWAYS be appended to `docker run` command
+CMD [...]
+	Default arguments to be appended to the `docker run`. Can be overriden in the CLI
+
+Build:
+	`docker build -t <name:tag> .`  (don't forget the '.'  at the end)
+
+Push:
+	Login (docker login <source>)
+		if source is ommited, it will login on Docker Hub
+	Retag the repository
+		docker image tag <image to be retagged> <registry>/<repository>/<name>:<tag>
+	Push image
+		docker push <tag>
+
+Best practices
+	Include multiple commands in a single RUN instruction (to reduce the number of layers)
+	We need to clean the build-time tools (how? With Multi-stage builds)
+
+Multi-stage builds:
+	Single Dockerfile with multiple FROM instructions
+	Each FROM is a build stage that can COPY artefacts from previous stages
