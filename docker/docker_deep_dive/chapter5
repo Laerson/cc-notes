@@ -1,0 +1,32 @@
+docker engine: Core software that run and manages containers
+
+it is modular
+major componentes are the:
+	1. Docker daemon
+	2. containerd
+	3. runc
+
+Current architecture:
+	Docker client (cli) -> Docker Daemon (API and features) -> containerd (container supervisor start|stop|pause) -> containers (shim -> runc -> running container)
+
+Runc:
+	implementation of the OCI container-runtime-spec
+	small, lightweight CLI wrapper for libcontainer
+		libcontainer is a library that provides interface for container management tasks
+	it creates the containers
+
+containerd
+	manage container lifecycle operations (start | stop | pause | rm...)
+	has been added more functionalities
+
+
+Example: Securing client and daemon communication
+
+docker - client
+dockerd - server
+
+by default they communicate over an unsecure http socket on port 2375/tcp (if you configure them to communicate over the network)
+that's not safe
+
+how to force client and daemon to only accept networks secured with tls:
+
