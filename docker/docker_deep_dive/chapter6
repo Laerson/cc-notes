@@ -1,0 +1,24 @@
+Images
+
+A docker image is a package that contains everything required for an application to run
+If you have an app`s docker image, you only need a computer running Docker
+
+You get docker images by PULLING them from an image registry (Docker Hub, gitlab registry, github registry, etc)
+pull - downloads the image from the repository
+
+image = build time
+container = runtime
+
+
+to pull image:
+docker pull <image:tag>
+
+filter the output of `docker image ls`:
+	docker image ls --filter (dangling | before | since | label)
+
+check the details of a image (including layers)
+	docker image inspect <image:tag>
+
+to remove a image:
+	docker rm <image>
+
