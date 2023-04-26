@@ -1,0 +1,26 @@
+Docker Compose
+
+Modern cloud-native apps are made of multiple smaller services that interact to form a useful app.
+
+We call that microservices
+
+Docker compose is does the deployment and management of those services
+Describe the entire app in a single declarative conf file, and deploy with a single command
+
+Compose Files:
+	YAML files
+	default name: docker-compose.yml
+	4 top-level keys":
+		. version
+			version of the Compose file
+			should normally use the latest
+		. services
+			Define the different microservices of the app
+			Each service will be deployed to a different container
+		. networks
+			Tells docker to create new networks
+			by default compose create `bridge` networks
+				bridge are single-host networks, that only connect containers on same host
+		. volumes
+	There are other
+
