@@ -24,3 +24,13 @@ Compose Files:
 		. volumes
 	There are other
 
+
+`docker-compose up` is the most common way to bring up a Compose app
+-f filepath
+-d brings the app to the background
+
+App management:
+	docker-compose down
+	volumes are not deleted (they are mean to be persistent storage)
+	docker-compose stop
+	does not remove the app definition from the system
