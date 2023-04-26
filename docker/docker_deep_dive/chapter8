@@ -48,3 +48,6 @@ Best practices
 Multi-stage builds:
 	Single Dockerfile with multiple FROM instructions
 	Each FROM is a build stage that can COPY artefacts from previous stages
+	"--from" flag for COPY command:
+		Copies only production related app code, and ignore build artifacts not used in production:q
+
