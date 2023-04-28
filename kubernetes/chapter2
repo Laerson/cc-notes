@@ -1,0 +1,73 @@
+At high level, Kubernetes is:
+	A cluster to run apps
+	An orchestrator of microservice apps
+
+Kubernetes as cluster
+	- A Bunch of Machines to host applications
+	- Each machine is a NODE
+	- A node can be physical servers, virtual machines, cloud instances, etc
+
+	A kubernetes cluster is made of a CONTROL PLANE and NODES
+
+	Control Planes  = Brain of the clusters
+	Node = Where the user apps run
+
+How it works:
+	You start wtih an app, package it as a container, then give it to the cluster(Kubernetes), the cluster is made up of one or more CONTROL PLANE NODES, and many WORKER NODES.
+
+	1. Write the app as an independent microservice
+	2. Package each microservice as its own container
+	3. Wrap each container in a kubernetes Pod
+	4. Deploy Pods to the cluster via higher-level controllers
+
+	Kubernetes is DECLARATIVE
+		You write what you want in a set of YAML files
+
+The control plane:
+	- API server
+		All communication (internal and external) goes through the API
+		Exposes a RESTful API that you can POST YAML configuration files (manifests)
+	
+	- Cluster store
+		Stores the configuration and state of the cluster
+		Based on etcd
+		Good practice to run 3 to 5 etcd replicas
+		values consistency over availability
+	
+	- Controller manager and controllers
+		- Controller manager control other controllers
+		- Controllers keep the cluster at the desired state
+
+	- Scheduler
+		- Assign tasks to Nodes
+	
+	- Cloud controller manager
+		 Facilitates integration iwth cloud services
+
+Nodes:
+	1. Watch the API for assignments
+	2. Execute assignments
+	3. Report back to control plane
+
+	Componentes:
+	 1. Kubelet
+	 2. Container runtime
+	 3. kube-proxy
+
+	Kubelet:
+		- Main agent
+		- watch the API server for new tasks, execute, and report back
+	Runtime:
+		Performs container-related tasks
+
+	Kube-proxy:
+		Responsible for local cluster networking
+		Gives each node its own unique IP
+		Implements networking stuff (local iptables, routing, etc)
+
+POD:
+	Atomic unit of Kubernetes (like container is the unit of Docker)
+	Runs one or more containers
+	PODS are unreliable!!!!!!!
+	Services provides reliable networking for a set of PODS
+
