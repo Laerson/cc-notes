@@ -1,0 +1,45 @@
+Containers
+
+Container is a runtime instance of an image
+
+To run a container:
+	docker run <image>
+	or
+	docker container run <image>
+
+	e.g.:
+	docker container run -it <image> /bin/bash
+
+docker container stop
+docker container start
+docker container rm
+--name (this flag lets you choose a name for the container)
+-d (instead of -it. It makes the image run on background, or "daemon mode")
+-p <host-port:container-port>
+
+serveless: back-end is highly virtualized to the point of host or node having no meaning
+
+The main difference between VMs and Containers is that
+	-Vms virtualize hardware
+	-Containers virtualize OS
+
+
+Data is persistent in the container, however:
+	1. It is stored on the host local fs
+	2. containers are designed to be immutable
+Therefore, it is not a good idea to use the container as persistent file storage, you should use VOLUMES.
+
+Volumes exist separately from the container but can be mounted into the container at runtime
+
+Self-healing containers
+	It is a good idea to run containers with a restart policy
+	they can be configured on CLI (--restart <policy>) or with YAML files
+
+	the following policies exit:
+		always
+		unless-stopped
+		on-failed
+
+	always: always restart a stopped container, unless it has been explicitily stopped
+	unless-stopped: Won't start if the daemon is restarted
+	on-failed: Restarts containers that exits with non-zero exit code

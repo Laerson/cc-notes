@@ -1,0 +1,21 @@
+# Kubernetes background
+
+- An application orchestrator
+- It orchestrates containerized cloud-native microservices apps
+
+# Orchestrator
+	System that deploys and manage applications
+
+	Kubernetes can:
+		1. Deploy app
+		2. Scale it up and down
+		3. Self heal
+		4. Perform zero-downtime updates/rollbacks
+		5. And more
+		You only need to set it up
+
+# Containerised app
+	App that runs in a container
+	Kubernetes can also orchestrate VMs and serveless functions
+
+

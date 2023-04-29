@@ -1,0 +1,19 @@
+Ways of getting Kubernetes:
+
+	1. K8s playgrounds: Play with Kubernetes, Katacoda, Docker Dekstop, minikube, etc
+		NOT FOR PRODUCTION
+
+	2. Hosted Kubernetes:
+		Outsource the infra to the cloud provider
+		examples:
+			GKE, AWS, Azure, DOKS, LKE
+
+	3. DIY install
+
+kubectl:
+	main kubernetes CLI tool
+	use always at least a version that's no more that one minor version higher or lower than the cluster
+
+	It converts user-friendly commands into HTTP REST requests with JSON content
+	The configuration file called 'config' is inside the directory $HOME/.kube/config
+	We call the config file with kubeconfig

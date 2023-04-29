@@ -1,0 +1,35 @@
+version: "3.8" # Defines version of Compose file format
+
+services:
+  #defines the services
+  web-fe:
+    #deploys thise service web-fe as a container
+    #this key will be part of the name of the container
+    build: .
+      #Tells docker to invoke Docker build using the Dockerfile in the curent directory
+    command: python app.py
+      #Tells docker to run the command
+      #This need to be a valid operation inside the container (image needs to have python, and app.py)
+    ports:
+      - target: 5000
+        published: 5000
+      #maps host port (target) to the port inside the container (published)
+    networks:
+      - counter-net
+      #Tells docker which network to attach the container to
+    volumes:
+      - type: volume
+        source: counter-vol
+        target: /code
+      #Mounts the volume counter-vol to /code
+  redis:
+    image: "redis:alpine"
+      #instead of building an image, it pulls a full image from registry
+    networks:
+      counter-net:
+
+networks:
+  counter-net:
+
+volumes:
+  counter-vol:
