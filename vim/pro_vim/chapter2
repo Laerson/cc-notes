@@ -1,0 +1,6 @@
+# Check the available shells:
+	cat /etc/shells
+
+# Change default shell
+	chsh -s <path to shell>
+	choose one of the previous options
